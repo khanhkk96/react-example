@@ -14,6 +14,7 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
+    padding: 0 var(--default-layout-horizontal-spacer);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -94,4 +95,25 @@
     &:active {
         background-color: rgba(22, 24, 35, 0.06);
     }
+}
+
+//actions
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.action-btn {
+    background-color: transparent;
+    font-size: 2.4rem;
+    color: #161823;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.more-btn {
+    font-size: 2rem;
+    margin-left: 28px;
+    background: transparent;
+    padding: 4px 8px;
 }
