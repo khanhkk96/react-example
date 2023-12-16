@@ -38,6 +38,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
         <Tippy
             // visible
             delay={[0, 500]}
+            offset={[12, 8]}
             interactive
             animation={false}
             placement="bottom-end"
