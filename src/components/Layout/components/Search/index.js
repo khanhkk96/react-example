@@ -9,7 +9,8 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import { useEffect, useRef, useState } from 'react';
 import { SearchIcon } from '~/components/Icons';
-import { userDebounce } from '~/routes/hooks';
+import { userDebounce } from '~/hooks';
+import * as request from '~/utils/request';
 import styles from './Search.module.scss';
 
 const cx = classNames.bind(styles);
@@ -32,8 +33,22 @@ function Search() {
 
         setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then((res) => res.json())
+        // fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
+        //     .then((res) => res.json())
+        //     .then((res) => {
+        //         setSearchResult(res.data);
+        //         setLoading(false);
+        //     })
+        //     .catch(() => {
+        //         setLoading(false);
+        //     });
+        request
+            .get(`/users/search`, {
+                params: {
+                    q: debounced,
+                    type: 'less',
+                },
+            })
             .then((res) => {
                 setSearchResult(res.data);
                 setLoading(false);
