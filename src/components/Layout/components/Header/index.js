@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 
 import images from '~/assets/images';
 import Button from '~/components/Button';
-import routeConfig from '~/config/routes';
+import config from '~/config';
 
 import { Link } from 'react-router-dom';
 import 'tippy.js/dist/tippy.css';
@@ -83,7 +83,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routeConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
                 {/* Search */}
@@ -124,11 +124,10 @@ function Header() {
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} hideOnClick={false} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
-                                // src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg"
-                                src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82113c323a742b42b1c71c1e45f1.jpg"
+                                src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg"
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
-                                fallback="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg"
+                                // fallback="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
