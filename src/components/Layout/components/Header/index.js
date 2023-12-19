@@ -1,4 +1,4 @@
-import { faCircleQuestion, faKeyboard, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faCircleQuestion, faKeyboard, faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faCoins, faEarthAsia, faEllipsisVertical, faGear, faSignOut } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react'; // different import path!
@@ -105,15 +105,16 @@ function Header() {
                                 </button>
                             </Tippy>
 
-                            {/* <button className={cx('action-btn')}>
+                            <button className={cx('action-btn')}>
                                 <FontAwesomeIcon icon={faMessage} />
-                            </button> */}
+                            </button>
                         </>
                     ) : (
                         <>
                             <Button text>Upload</Button>
                             <Button
                                 primary
+                                to="/"
                                 // leftIcon={<FontAwesomeIcon icon={faSignIn} />}
                                 // rightIcon={<FontAwesomeIcon icon={faSignIn} />}
                             >
